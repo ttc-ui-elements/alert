@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>Alert test</title>
+
+  <script src="../dist/polyfill/webcomponents-loader.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../dist/bs4-alert.html">
+</head>
+
+<body>
+  <test-fixture id="basic">
+    <template>
+      <bs4-alert></bs4-alert>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="info">
+    <template>
+      <bs4-alert type="info"></bs4-alert>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="succses">
+    <template>
+      <bs4-alert type="succses"></bs4-alert>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="warning">
+    <template>
+      <bs4-alert type="warning"></bs4-alert>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="danger">
+    <template>
+      <bs4-alert type="danger"></bs4-alert>
+    </template>
+  </test-fixture>
+  <script>
+    suite('bs4-alert', function () {
+
+      var element;
+
+      setup(function () {
+        element = fixture('basic');
+      });
+
+      test('instantiating the element works', function () {
+        assert.equal(element.tagName.toLowerCase(), 'bs4-alert');
+      });
+    });
+
+    suite('bs4-alert-info', function () {
+      var element;
+      setup(function () {
+        element = fixture('info');
+      });
+      console.info(element.classList.toString())
+      test('element is info', function () {
+        expect(element.getAttribute('class')).to.match(/alert-info/);
+      });
+    });
+
+			// test('instantiating the element works', function () {
+			// 	var element = fixture('basic');
+			// 	assert.equal(element.tagName.toLowerCase(), 'bs4-alert');
+			// });
+
+			// test('element is info', function () {
+			// 	var element = fixture('info');
+			// 	console.info(element)
+			// 	expect(element.getAttribute('class')).to.match(/alert-info/);
+			// });
+
+			//  test('element is succses', function () {
+			// 		var element = fixture('succses');
+			// 		expect(element).to.have.property('class').to.match(/alert-succses/);
+			// });
+
+			// test('element is warning', function () {
+			// 	var element = fixture('warning');
+			// 	expect(element).to.have.property('class').to.match(/alert-warning/);
+			// });
+
+			// test('element is danger', function () {
+			// 		var element = fixture('danger');
+			// 		expect(element).to.have.property('class').to.match(/alert-danger/);
+			// });
+  </script>
+</body>
+
+</html>

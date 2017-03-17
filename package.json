@@ -1,0 +1,43 @@
+{
+	"name": "bootstrap-custom-elements-alert",
+	"version": "0.0.1",
+	"description": "Bootstrap Alert as custom element",
+	"authors": [
+		"Dimitrios Grammatikogiannis <d.grammatiko@gmail.com>"
+	],
+	"main": "Gruntfile.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bootstrap-custom-elements/alert.git"
+	},
+	"homepage": "http://bootstrap-custom-elements.github.io/#alert",
+	"keywords": [
+		"custom-elements",
+		"web-components",
+		"alert",
+		"toast",
+		"vanilla",
+		"bootstrap"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"devDependencies": {
+		"babel-preset-es2015": "latest",
+		"babel-plugin-transform-custom-element-classes": "latest",
+		"babelify": "latest",
+		"babili": "0.0.12",
+		"bootstrap": "~4.0.0-alpha.6",
+		"grunt": "latest",
+		"grunt-contrib-copy": "latest",
+		"grunt-contrib-cssmin": "latest",
+		"grunt-contrib-uglify": "latest",
+		"grunt-browserify": "latest",
+		"grunt-sass": "latest"
+	}
+}
