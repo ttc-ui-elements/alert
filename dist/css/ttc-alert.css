@@ -1,10 +1,16 @@
+/*
+ * Variables
+ *
+ */
 ttc-alert {
   display: block;
   min-width: 250px;
   min-height: 50px;
   padding: .5rem 1.25rem;
   margin-bottom: 1rem;
+  color: #000;
   border: 1px solid transparent;
+  text-shadow: 0 1px 0 #fff;
   -webkit-animation: ttc-alert-fadein 1s;
           animation: ttc-alert-fadein 1s; }
 
@@ -22,11 +28,9 @@ ttc-alert button {
   top: -0.5rem;
   right: -1.25rem;
   padding: .2rem 1rem;
-  color: inherit;
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1;
-  text-shadow: 0 1px 0 #fff;
   padding-top: .75rem;
   font-size: 100%;
   line-height: 1.15;
@@ -43,22 +47,18 @@ ttc-alert div::before {
 ttc-alert h4 {
   float: left; }
 
-ttc-alert[type="success"] {
-  color: #1a6d4e;
-  background-color: #d6f6ea;
-  border-color: #c6f2e2; }
+ttc-alert[type="danger"] {
+  background-color: #fcdce2;
+  border-color: #fcdce2; }
 
 ttc-alert[type="info"] {
-  color: #10467d;
   background-color: #d2e7fc;
-  border-color: #c0ddfb; }
+  border-color: #d2e7fc; }
+
+ttc-alert[type="success"] {
+  background-color: #d6f6ea;
+  border-color: #d6f6ea; }
 
 ttc-alert[type="warning"] {
-  color: #82532f;
   background-color: #feecde;
-  border-color: #fee4d1; }
-
-ttc-alert[type="danger"] {
-  color: #7d2a39;
-  background-color: #fcdce2;
-  border-color: #fbced6; }
+  border-color: #feecde; }

@@ -1,4 +1,4 @@
-((customElements) => {
+(() => {
   class TtcAlert extends HTMLElement {
     /*
      * Attributes
@@ -131,4 +131,4 @@
   }
 
   customElements.define('ttc-alert', TtcAlert);
-})(customElements);
+})();
