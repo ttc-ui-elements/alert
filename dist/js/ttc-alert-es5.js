@@ -45,7 +45,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
        *
        * type: controls the color of the alert
        * dismiss: Sets a close button for discarding the alert
-       * button-text: The text of the button (for i11y)
+       * button-text: The text of the button (for i18n)
        *
        */
 

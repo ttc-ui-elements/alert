@@ -3,8 +3,8 @@ const fsExtra = require('fs-extra');
 const autoprefixer = require('autoprefixer');
 const postcss = require('postcss');
 const Sass = require('node-sass');
-const babelify = require("babelify");
-const browserify = require("browserify");
+const babelify = require('babelify');
+const browserify = require('browserify');
 const UglyCss = require('uglifycss');
 const UglifyJS = require('uglify-es');
 
@@ -15,17 +15,17 @@ const options = require('./package.json');
 
 const cleaner = postcss([autoprefixer({ add: false, browsers: options.settings.browsers })]);
 const prefixer = postcss([autoprefixer]);
-//###################################################################
+// ###################################################################
 
 // Make sure that the dist paths exist
-if (!fs.existsSync(rootPath + '/dist')) {
-  fsExtra.mkdirSync(rootPath + '/dist');
+if (!fs.existsSync(`${rootPath}/dist`)) {
+  fsExtra.mkdirSync(`${rootPath}/dist`);
 }
-if (!fs.existsSync(rootPath + '/dist/js')) {
-  fsExtra.mkdirSync(rootPath + '/dist/js');
+if (!fs.existsSync(`${rootPath}/dist/js`)) {
+  fsExtra.mkdirSync(`${rootPath}/dist/js`);
 }
-if (!fs.existsSync(rootPath + '/dist/css')) {
-  fsExtra.mkdirSync(rootPath + '/dist/css');
+if (!fs.existsSync(`${rootPath}/dist/css`)) {
+  fsExtra.mkdirSync(`${rootPath}/dist/css`);
 }
 if (fs.existsSync(`${rootPath}/dist`)) {
   if (fs.existsSync(`${rootPath}/docs/_media/js`)) {
@@ -37,7 +37,7 @@ if (fs.existsSync(`${rootPath}/dist`)) {
   fsExtra.mkdirSync(`${rootPath}/docs/_media/css`);
 }
 
-const createJsFiles = (element, es6File, options) => {
+const createJsFiles = (element, es6File) => {
   const b = browserify();
   const c = browserify();
 
@@ -117,7 +117,6 @@ options.settings.elements.forEach((element) => {
               process.exit(-1);
             });
 
-          return;
           // eslint-disable-next-line no-console
           console.log(`ttc-${element} was updated.`);
         }

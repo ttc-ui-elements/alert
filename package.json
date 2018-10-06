@@ -25,10 +25,14 @@
     "node_modules",
     "tests"
   ],
-  "devDependencies": {
+  "scripts": {
+    "build": "npx eslint src && node build.js",
+    "eslint": "npx eslint src"
+  },
+  "dependencies": {
     "autoprefixer": "^8.0.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.0",
+    "babel-eslint": "^8.2.6",
     "babel-minify": "^0.3.0",
     "babel-plugin-add-header-comment": "^1.0.3",
     "babel-plugin-static-fs": "latest",
@@ -37,9 +41,14 @@
     "babel-preset-minify": "^0.3.0",
     "babelify": "^8.0.0",
     "browserify": "*",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "fs": "0.0.1-security",
     "fs-extra": "^7.0.0",
     "node-sass": "^4.9.3",
+    "postcss": "^7.0.5",
     "uglify-es": "^3.3.9",
     "uglifycss": "0.0.29"
   },
