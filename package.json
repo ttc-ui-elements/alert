@@ -1,43 +1,55 @@
 {
-	"name": "bootstrap-custom-elements-alert",
-	"version": "0.0.1",
-	"description": "Bootstrap Alert as custom element",
-	"authors": [
-		"Dimitrios Grammatikogiannis <d.grammatiko@gmail.com>"
-	],
-	"main": "Gruntfile.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/bootstrap-custom-elements/alert.git"
-	},
-	"homepage": "http://bootstrap-custom-elements.github.io/#alert",
-	"keywords": [
-		"custom-elements",
-		"web-components",
-		"alert",
-		"toast",
-		"vanilla",
-		"bootstrap"
-	],
-	"license": "MIT",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"devDependencies": {
-		"babel-preset-es2015": "latest",
-		"babel-plugin-transform-custom-element-classes": "latest",
-		"babelify": "latest",
-		"babili": "0.0.12",
-		"bootstrap": "~4.0.0-alpha.6",
-		"grunt": "latest",
-		"grunt-contrib-copy": "latest",
-		"grunt-contrib-cssmin": "latest",
-		"grunt-contrib-uglify": "latest",
-		"grunt-browserify": "latest",
-		"grunt-sass": "latest"
-	}
+  "name": "ttc-ui-elements-alert",
+  "version": "0.0.1",
+  "description": "Alert component",
+  "authors": [
+    "Dimitrios Grammatikogiannis <d.grammatiko@gmail.com>"
+  ],
+  "contributors": [
+    "Ciaran Walsh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ttc-ui-elements/alert.git"
+  },
+  "homepage": "http://ttc-ui-elements.github.io/complete-package",
+  "keywords": [
+    "custom-elements",
+    "web-components",
+    "alert",
+    "vanilla"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "tests"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-minify": "^0.3.0",
+    "babel-plugin-add-header-comment": "^1.0.3",
+    "babel-plugin-static-fs": "latest",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.3.0",
+    "babelify": "^8.0.0",
+    "browserify": "*",
+    "fs": "0.0.1-security",
+    "fs-extra": "^7.0.0",
+    "node-sass": "^4.9.3",
+    "uglify-es": "^3.3.9",
+    "uglifycss": "0.0.29"
+  },
+  "settings": {
+    "browsers": [
+      "last 1 version",
+      "ie 11"
+    ],
+    "elements": [
+      "alert"
+    ]
+  }
 }
