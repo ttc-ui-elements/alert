@@ -25,6 +25,7 @@
     "node_modules",
     "tests"
   ],
+  "main": "src/js/alert/alert.js",
   "scripts": {
     "build": "npx eslint src && node build.js",
     "eslint": "npx eslint src"
