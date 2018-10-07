@@ -60,7 +60,14 @@ const createJsFiles = (element, es6File) => {
 
 options.settings.elements.forEach((element) => {
   // Copy the ES6 file
-  let es6File = fs.readFileSync(`${rootPath}/src/js/${element}/${element}.js`, 'utf8');
+  let es6File = `((customElements) => {
+`;
+  let inputFile = fs.readFileSync(`${rootPath}/src/js/${element}/${element}.js`, 'utf8');
+  es6File += inputFile.replace('export default ', '');
+  es6File += `
+customElements.define('ttc-alert', TtcAlert);
+})(customElements);`;
+
   // Check if there is a css file
   if (fs.existsSync(`${rootPath}/src/scss/${element}/${element}.scss`)) {
     if (!fs.existsSync(`${rootPath}/src/scss/${element}/${element}.scss`)) {
