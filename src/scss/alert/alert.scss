@@ -31,7 +31,7 @@ ttc-alert button {
   right: -1.25rem;
   padding: .2rem 1rem;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
   padding-top: .75rem;
   font-size: 100%;
@@ -42,32 +42,35 @@ ttc-alert button {
   -webkit-appearance: none;
 }
 
-ttc-alert div::before {
+ttc-alert-content::before {
   content: "";
   clear: both;
   display: table;
 }
 
-ttc-alert h4{
+ttc-alert-title {
   float: left;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-ttc-alert[type="danger"]{
+ttc-alert[type="danger"] {
   background-color: $danger-color;
   border-color: $danger-color;
 }
 
-ttc-alert[type="info"]{
+ttc-alert[type="info"] {
   background-color: $info-color;
   border-color: $info-color;
 }
 
-ttc-alert[type="success"]{
+ttc-alert[type="success"] {
   background-color: $success-color;
   border-color: $success-color;
 }
 
-ttc-alert[type="warning"]{
+ttc-alert[type="warning"] {
   background-color: $warning-color;
   border-color: $warning-color;
 }
