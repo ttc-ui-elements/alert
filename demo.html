@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /*
+ * Variables
+ *
+ */
+ttc-alert {
+  display: block;
+  min-width: 250px;
+  min-height: 50px;
+  padding: .5rem 1.25rem;
+  margin-bottom: 1rem;
+  color: #000;
+  border: 1px solid transparent;
+  text-shadow: 0 1px 0 #fff;
+  animation: ttc-alert-fadein 1s;
+}
+
+@keyframes ttc-alert-fadein {
+  from {
+    opacity: 0;
+  }
+}
+ttc-alert button {
+  float: right;
+  position: relative;
+  top: -0.5rem;
+  right: -1.25rem;
+  padding: .2rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: .75rem;
+  font-size: 100%;
+  line-height: 1.15;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+ttc-alert-content::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ttc-alert-title {
+  float: left;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+ttc-alert[type="danger"] {
+  background-color: #fcdce2;
+  border-color: #fcdce2;
+}
+
+ttc-alert[type="info"] {
+  background-color: #d2e7fc;
+  border-color: #d2e7fc;
+}
+
+ttc-alert[type="success"] {
+  background-color: #d6f6ea;
+  border-color: #d6f6ea;
+}
+
+ttc-alert[type="warning"] {
+  background-color: #feecde;
+  border-color: #feecde;
+}
+</style>
+<script>
+(()=>{customElements.define("ttc-alert",class extends HTMLElement{static get observedAttributes(){return["type","dismiss"]}get type(){return this.getAttribute("type")}set type(t){return this.setAttribute("type",t)}get dismiss(){return this.getAttribute("dismiss")}set dismiss(t){return this.setAttribute("type",t)}get buttonText(){return this.getAttribute("button-text")||"Close"}set buttonText(t){return this.setAttribute("button-text",t)}constructor(){super(),this.hasDismissButton=!1,this.closeButton="",this.dispatchCustomEvent=this.dispatchCustomEvent.bind(this),this.appendCloseButton=this.appendCloseButton.bind(this),this.removeCloseButton=this.removeCloseButton.bind(this),this.render=this.render.bind(this),this.close=this.close.bind(this)}connectedCallback(){(!this.type||this.type&&-1===["info","warning","danger","success"].indexOf(this.type))&&(this.type="info"),this.render(),this.dispatchCustomEvent("ttc.alert.show")}disconnectedCallback(){this.closeButton&&this.closeButton.removeEventListener("click",this.close)}attributeChangedCallback(t,e,s){switch(t){case"type":(!s||s&&-1===["info","warning","danger","success"].indexOf(s))&&(this.type="info");break;case"dismiss":case"title":case"message":case"button-text":this.render()}}dispatchCustomEvent(t){const e=new CustomEvent(t);this.dispatchEvent(e),this.removeEventListener(t,e)}close(){this.dispatchCustomEvent("ttc.alert.hide"),this.removeAttribute("show"),this.parentNode.removeChild(this)}appendCloseButton(){this.setAttribute("role","alert"),this.closeButton=this.querySelector("button"),this.closeButton||(this.closeButton=document.createElement("button")),this.closeButton.innerText=this.buttonText,this.closeButton.setAttribute("aria-label",this.buttonText),this.closeButton.setAttribute("type","button"),this.insertAdjacentElement("afterbegin",this.closeButton),this.closeButton.addEventListener("click",this.close),this.focus()}removeCloseButton(){this.closeButton&&(this.closeButton.removeEventListener("click",this.close),this.removeChild(this.closeButton))}render(){!this.hasAttribute("dismiss")||this.dismiss&&"false"!==this.dismiss?this.removeCloseButton():this.appendCloseButton()}})})();
+</script>
+</head>
+<body>
+<h1> Alerts demo</h1>
+
+
+</body>
+<script>
+var a = document.createElement('ttc-alert');
+a.setAttribute('type', 'danger')
+a.setAttribute('dismiss', '')
+a.setAttribute('button-text', 'Cliiiick')
+
+var b= document.createElement('ttc-alert-title')
+b.innerText = 'Something Important'
+
+var c= document.createElement('ttc-alert-content')
+c.innerText = 'This alert needs your attention, but it\'s not super important.'
+
+a.appendChild(b)
+a.appendChild(c)
+document.body.insertAdjacentElement('beforeend', a)
+</script>
+</html>
