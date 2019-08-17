@@ -44,7 +44,7 @@
     "browserify": "^16.2.3",
     "eslint": "^6.0.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.14.0",
     "fs": "0.0.2",
     "fs-extra": "^7.0.1",
